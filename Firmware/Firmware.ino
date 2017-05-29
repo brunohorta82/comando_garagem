@@ -2,18 +2,20 @@
 #include <WiFiClient.h>
 #include <ESP8266WebServer.h>
 #include <ESP8266mDNS.h>
-#define EXTERNAL_DOOR 5
+#define STREET_DOOR 5
 #define GARAGE_DOOR 4
+//CHANGE TO YOUR Wi-Fi NETWORK
 const char* ssid = "Bruno's Office Wi-Fi Network";
+//SET YOUR NETWORK Wi-Fi PASSWORD
 const char* password = "ARDUINO2016";
 
 
 ESP8266WebServer server(80);
 
 void handleExternalDoor() {
-  digitalWrite(EXTERNAL_DOOR, HIGH);
+  digitalWrite(STREET_DOOR, HIGH);
   delay(2000);
-  digitalWrite(EXTERNAL_DOOR, LOW);
+  digitalWrite(STREET_DOOR, LOW);
   server.send(200, "text/plain","1");
 }
 

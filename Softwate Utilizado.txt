@@ -1,0 +1,10 @@
+Softwate Utilizado
+
+Software para criação de esquemas electricos
+http://fritzing.org/
+
+Software de desenho 3D
+https://www.freecadweb.org
+
+Software para programar o Wemos
+https://www.arduino.cc/en/Main/Software

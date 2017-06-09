@@ -7,7 +7,7 @@
 //CHANGE TO YOUR Wi-Fi NETWORK
 const char* ssid = "Bruno's Office Wi-Fi Network";
 //SET YOUR NETWORK Wi-Fi PASSWORD
-const char* password = "ARDUINO2016";
+const char* password = "CENASFIXES";
 
 
 ESP8266WebServer server(80);
@@ -43,7 +43,7 @@ void handleNotFound(){
 
 void setup(){
   //SETUP PINS
-  pinMode(EXTERNAL_DOOR, OUTPUT);
+  pinMode(STREET_DOOR, OUTPUT);
   pinMode(GARAGE_DOOR, OUTPUT);
   
   //INIT SERIAL FOR DEBUG

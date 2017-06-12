@@ -5,14 +5,14 @@
 #define STREET_DOOR 5
 #define GARAGE_DOOR 4
 //CHANGE TO YOUR Wi-Fi NETWORK
-const char* ssid = "Bruno's Office Wi-Fi Network";
+const char* ssid = "Bruno's Wi-Fi Network";
 //SET YOUR NETWORK Wi-Fi PASSWORD
-const char* password = "CENASFIXES";
+const char* password = "PW";
 
 
 ESP8266WebServer server(80);
 
-void handleExternalDoor() {
+void handleStreetDoor() {
   digitalWrite(STREET_DOOR, HIGH);
   delay(2000);
   digitalWrite(STREET_DOOR, LOW);
@@ -70,7 +70,7 @@ void setup(){
   }
 
   //REGISTER END POINTS
-  server.on("/external-door", handleExternalDoor);
+  server.on("/street-door", handleStreetDoor);
   server.on("/garage-door", handleGarageDoor);
   server.onNotFound(handleNotFound);
   server.begin();

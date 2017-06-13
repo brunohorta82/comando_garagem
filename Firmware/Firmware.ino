@@ -51,6 +51,7 @@ void setup(){
 
   //START WI-FI CONNECTIONS
   WiFi.begin(ssid, password);
+  WiFi.mode(WIFI_STA);
   Serial.println("");
 
   // Wait for connection

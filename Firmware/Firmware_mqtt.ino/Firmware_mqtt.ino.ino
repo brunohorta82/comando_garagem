@@ -5,11 +5,11 @@
 #define STREET_DOOR 5
 #define GARAGE_DOOR 4
 const char *ssid =  "Bruno's Wi-Fi Network";    // cannot be longer than 32 characters!
-const char *pass =  "PW";    //
+const char *pass =  "ARDUINO2016";    //
 
 // Update these with values suitable for your network.
-
-IPAddress server(192, 168,187,70);
+IPAddress server(213, 136, 83, 118);
+//IPAddress server(192, 168,187,70);
 
 String garagedoorState = "UNDEFINED";
 String streetdoorState = "UNDEFINED";
@@ -101,7 +101,8 @@ void loop() {
 
   if (WiFi.status() == WL_CONNECTED) {
     if (!client.connected()) {
-      if (client.connect("GarageDoorController")) {
+      if (client.connect(MQTT::Connect("GarageDoorController")
+      .set_auth("moscas", "moscasMoscas82"))) {
         client.subscribe("home-assistant/garagedoor/set");
         client.subscribe("home-assistant/streetdoor/set");
         client.subscribe("home-assistant/garagedoor");   
